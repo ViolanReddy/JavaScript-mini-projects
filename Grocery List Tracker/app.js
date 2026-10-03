@@ -1,0 +1,29 @@
+// Grocery list array
+let groceryList = [];
+
+// Function to add an item to the grocery list
+function addItem(item) {
+    groceryList.push(item);
+    console.log(`${item} added to the grocery list.`);
+}
+
+// Function to remove an item from the grocery list
+function removeItem(item) {
+    const index = groceryList.indexOf(item);
+    if (index !== -1) {
+        groceryList.splice(index, 1);
+        console.log(`${item} removed from the grocery list.`);
+    } else {
+        console.log(`${item} is not in the grocery list.`);
+    }
+}
+
+// Function to view the current grocery list
+function viewList() {
+    if (groceryList.length === 0) {
+        console.log("The grocery list is empty.");
+    } else {
+        console.log("Grocery List:");
+        groceryList.forEach((item, index) => console.log(`${index + 1}. ${item}`));
+    }
+}
